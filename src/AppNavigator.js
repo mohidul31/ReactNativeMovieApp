@@ -1,7 +1,7 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import HomeScreen from "./screen/HomeScreen";
-import AboutScreen from "./screen/AboutScreen";
+import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
 
 const AppNavigator = createStackNavigator(
   {
@@ -10,7 +10,7 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: "Home",
-    //headerMode: 'none',
+    headerMode: 'none',
   }
 );
 
