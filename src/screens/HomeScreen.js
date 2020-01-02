@@ -11,7 +11,9 @@ import {
   Body,
   Text,
   Card,
-  CardItem
+  CardItem,
+  Button,
+  Icon
 } from "native-base";
 export default class App extends Component {
   constructor(props) {
@@ -44,6 +46,17 @@ export default class App extends Component {
             <Text>
               {item.title} ({item.releaseYear})
             </Text>
+            <Button
+              iconLeft
+              dark
+              small
+              onPress={() => {
+                this.props.navigation.navigate("Details", {item});
+              }}
+            >
+              <Icon name="cog" />
+              <Text>Details</Text>
+            </Button>
           </Body>
         </CardItem>
       </Card>

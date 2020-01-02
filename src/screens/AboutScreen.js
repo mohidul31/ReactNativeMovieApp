@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import FooterComponent from "./FooterComponent";
-import { Container, Header, Title, Content, Right, Body } from "native-base";
+import { Container, Header, Title, Content, Right, Body, Text } from "native-base";
 
 export default class AboutScreen extends Component {
   constructor(props) {
@@ -23,8 +23,8 @@ export default class AboutScreen extends Component {
           </Body>
           <Right />
         </Header>
-        <Content>
-          <Text  style={styles.about}>This App is Developed By SHOVON</Text>
+        <Content contentContainerStyle={styles.container}>
+          <Text>This App is Developed By SHOVON</Text>
         </Content>
         <FooterComponent navigation={navigation} />
       </Container>
@@ -32,7 +32,7 @@ export default class AboutScreen extends Component {
   }
 }
 const styles = StyleSheet.create({
-  about: {
+  container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
