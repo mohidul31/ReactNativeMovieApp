@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text } from "react-native";
-import FooterComponent from "./FooterComponent";
+import FooterComponent from "../FooterComponent";
 import { Container, Header, Title, Content, Right, Body } from "native-base";
 import { Card, CardItem, Button, Icon } from "native-base";
 

@@ -24,7 +24,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.yourappname"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#000000"
+    },
+    "android": {
+      "package": "com.yourcompany.yourappname"
     }
   }
 }
