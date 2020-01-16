@@ -10,7 +10,7 @@ import {
   Icon
 } from "native-base";
 import { Image } from "react-native";
-const routes = ["Login","Home", "About"];
+const routes = ["LogIn","Home", "About"];
 
 export default class SideMenuComponent extends Component {
   constructor(props) {

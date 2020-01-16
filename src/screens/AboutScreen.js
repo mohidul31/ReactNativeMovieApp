@@ -8,7 +8,10 @@ import {
   Content,
   Right,
   Body,
-  Text
+  Text,
+  Left,
+  Icon,
+  Button
 } from "native-base";
 
 export default class AboutScreen extends Component {
@@ -26,13 +29,24 @@ export default class AboutScreen extends Component {
     return (
       <Container>
         <Header>
+          <Left>
+            <Button
+              transparent
+              onPress={() => {
+                this.props.navigation.navigate("Home");
+              }}
+            >
+              <Icon name="arrow-back" />
+            </Button>
+          </Left>
           <Body>
             <Title>About</Title>
           </Body>
           <Right />
         </Header>
         <Content contentContainerStyle={styles.container}>
-          <Text>This App is Developed By SHOVON</Text>
+          <Text>This App is Developed By::</Text>
+          <Text>H. M. MOHIDUL ISLAM(SHOVON)</Text>
         </Content>
         <FooterComponent navigation={navigation} />
       </Container>

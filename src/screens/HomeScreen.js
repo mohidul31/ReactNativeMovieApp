@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, ActivityIndicator, FlatList } from "react-native";
+import { View, ActivityIndicator, FlatList, StyleSheet } from "react-native";
 
 import {
   Container,
@@ -14,7 +14,9 @@ import {
   Button,
   Icon,
   Drawer,
-  Left
+  Left,
+  Item,
+  Input
 } from "native-base";
 import SideMenuComponent from "../SideMenuComponent";
 import FooterComponent from "../FooterComponent";
@@ -77,8 +79,8 @@ export default class App extends Component {
 
     if (isLoading) {
       return (
-        <View>
-          <ActivityIndicator size="large" color="red"></ActivityIndicator>
+        <View style={styles.activityIndicator}>
+          <ActivityIndicator size="large" color="blue"></ActivityIndicator>
         </View>
       );
     }
@@ -103,7 +105,7 @@ export default class App extends Component {
             <Body>
               <Title>Movie List</Title>
             </Body>
-            <Right />
+            <Right></Right>
           </Header>
           <Content>
             <FlatList
@@ -118,3 +120,10 @@ export default class App extends Component {
     );
   }
 }
+const styles = StyleSheet.create({
+  activityIndicator: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});
