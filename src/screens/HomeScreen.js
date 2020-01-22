@@ -15,7 +15,6 @@ import {
   Icon,
   Drawer,
   Left,
-  Item,
   Input
 } from "native-base";
 import SideMenuComponent from "../SideMenuComponent";
@@ -40,8 +39,19 @@ export default class App extends Component {
           isLoading: false,
           dataSource: responseJson
         });
+        this.arrayHolder = responseJson.movies;
       });
   }
+  searchFilter(text) {
+    const filteredData = this.arrayHolder.filter(item => {
+      return item.title.toUpperCase().indexOf(text.toUpperCase()) > -1;
+    });
+    this.setState({
+      dataSource: {
+        movies: filteredData
+      }
+    });
+  };
 
   RenderEachItem = ({ item }) => {
     return (
@@ -108,6 +118,12 @@ export default class App extends Component {
             <Right></Right>
           </Header>
           <Content>
+            <Input
+              placeholder="Type Here To Search By Movie Name"
+              onChangeText={text => {
+                this.searchFilter(text);
+              }}
+            />
             <FlatList
               data={dataSource ? dataSource.movies : []}
               renderItem={this.RenderEachItem}
