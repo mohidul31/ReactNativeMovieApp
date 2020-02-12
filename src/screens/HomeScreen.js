@@ -32,14 +32,14 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    fetch("https://facebook.github.io/react-native/movies.json")
+    fetch("http://shovon.bdren.net.bd/api/articles")
       .then(response => response.json())
       .then(responseJson => {
         this.setState({
           isLoading: false,
           dataSource: responseJson
         });
-        this.arrayHolder = responseJson.movies;
+        this.arrayHolder = responseJson;
       });
   }
   searchFilter(text) {
@@ -59,7 +59,7 @@ export default class App extends Component {
         <CardItem>
           <Body>
             <Text>
-              {item.title} ({item.releaseYear})
+              {item.title}
             </Text>
             <Button
               iconLeft
@@ -125,7 +125,7 @@ export default class App extends Component {
               }}
             />
             <FlatList
-              data={dataSource ? dataSource.movies : []}
+              data={dataSource ? dataSource : []}
               renderItem={this.RenderEachItem}
               keyExtractor={item => item.id}
             />
