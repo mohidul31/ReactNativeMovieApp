@@ -27,6 +27,6 @@ export default class App extends React.Component {
       return <AppLoading />;
     }
 
-    return <AppNavigator />;
+    return <AppNavigator  />;
   }
 }
